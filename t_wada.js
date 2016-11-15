@@ -36,7 +36,7 @@ function drawFukidashi(ctx) {
     ctx.fill();
 }
 function wrapText(ctx, text) {
-    var x = 30, y = 100, maxWidth = 280, lineHeight = 25;
+    var x = 30, y = 100, maxWidth = 275, lineHeight = 25;
     var words = text.split('');
     var line = '';
     ctx.font = "24px 'Monotype Corsiva'";
