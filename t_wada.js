@@ -44,7 +44,6 @@ function wrapText(ctx, text) {
     for (var n = 0; n < words.length; n++) {
         var testLine = line + words[n] + ' ';
         var metrics = ctx.measureText(testLine);
-        console.log(metrics);
         var testWidth = metrics.width;
         if (testWidth > maxWidth && n > 0) {
             ctx.fillText(line, x, y);
