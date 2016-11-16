@@ -79,6 +79,15 @@ function main() {
     canvas.height = canvasSize.height;
     var ctx = canvas.getContext('2d');
     draw(ctx, canvasSize, textarea.value);
+    canvas.addEventListener("click", function(event) {
+        event.currentTarget.toBlob(function(blob) {
+            var a = document.createElement("a");
+            a.download = "t_wada.png";
+            a.href = URL.createObjectURL(blob);
+            a.click();
+            URL.revokeObjectURL(blob);
+        }, "image/png", 0.9);
+    });
 }
 window.onload = function() {
     main();
