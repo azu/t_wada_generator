@@ -45,9 +45,13 @@ function wrapText(ctx, text) {
         var testLine = line + words[n] + ' ';
         var metrics = ctx.measureText(testLine);
         var testWidth = metrics.width;
-        if (testWidth > maxWidth && n > 0) {
+        if (words[n] === '\n' || testWidth > maxWidth && n > 0) {
             ctx.fillText(line, x, y);
-            line = words[n] + ' ';
+            if (words[n] === '\n') {
+                line = '';
+            } else {
+                line = words[n] + ' ';
+            }
             y += lineHeight;
         } else {
             line = testLine;
